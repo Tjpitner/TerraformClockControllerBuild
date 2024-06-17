@@ -3,6 +3,8 @@ This repo contains my build process for clock controller VM's using Terraform as
 # Stack used:
 Terraform
 
+OCI
+
 Bitbucket
 
 Atlantis
@@ -38,11 +40,12 @@ Crypto
 9. Configure password and create Crypto entries
 
 # Create Terraform Bitbucket Request
-```
+
 Santity check: This guide assumes pwd returns your home directory or ~
 
 Update your local copy & create a new git branch
 
+```
 cd ~/xxxx-oci_prd
 
 git checkout master
