@@ -5,6 +5,8 @@ Terraform
 
 Bitbucket
 
+Atlantis
+
 Rundeck
 
 Spacewalk
@@ -41,7 +43,7 @@ Santity check: This guide assumes pwd returns your home directory or ~
 
 Update your local copy & create a new git branch
 
-cd ~/wfstf-oci_prd
+cd ~/xxxx-oci_prd
 
 git checkout master
 
@@ -51,6 +53,59 @@ git checkout -b clock-DATACENTER-CUSTOMER
 
 mkdir DATACENTER/clock-controllers/CUSTOMER
 ```
+
+# Create the flex shapes for OCI
+
+```
+/opt/xxxxxx/bin/newclock-flex.sh -e prd -d DATACENTER -c CUSTOMER -s 0 -p 2 -m 4 -M '100'
+/opt/xxxxxx/bin/newclock-flex.sh -e tst -d DATACENTER -c CUSTOMER -s 0 -p 2 -m 4 -M '100'
+```
+# Validate the files for your Pull Request
+
+```
+cd DATACENTER/clock-controllers/CUSTOMER
+git add -A .
+git status
+```
+
+# Submit your Pull Request
+
+```
+git commit -m clock-DATACENTER-CUSTOMER
+git push -u origin clock-DATACENTER-CUSTOMER
+```
+
+# Deploy Terraform Code
+Make sure to merge the bitbucket request first and close the source branch
+
+```
+cd ~/xxxx-oci_prd
+git checkout master
+git pull
+cd DATACENTER/clock-controllers/CUSTOMER
+scl enable rh-python36 bash
+tfv=1.1.7 . /xxxociprep
+tfinit
+terraform plan
+terraform apply
+```
+
+# Deploy hosts with Rundeck
+
+```
+/opt/xxxxxx/bin/clock-rundeck-flex.sh
+```
+
+# Create DB User
+
+Adding the prod/test clock controller user accounts to the instance frontend so the environments can communicate with the VM's
+
+# Create password and create details in Crypto
+
+Adding the clock controller DB user information and the newly created URL's to Crypto 
+
+
+
 
 
 
