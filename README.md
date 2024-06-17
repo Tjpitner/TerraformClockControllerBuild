@@ -35,3 +35,25 @@ Crypto
 
 9. Configure password and create Crypto entries
 
+# Create Terraform Bitbucket Request
+```
+Santity check: This guide assumes pwd returns your home directory or ~
+
+Update your local copy & create a new git branch
+
+cd ~/wfstf-oci_prd
+
+git checkout master
+
+git pull
+
+git checkout -b clock-DATACENTER-CUSTOMER
+
+mkdir DATACENTER/clock-controllers/CUSTOMER
+```
+
+
+
+
+
+
