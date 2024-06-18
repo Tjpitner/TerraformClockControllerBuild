@@ -11,8 +11,6 @@ Atlantis
 
 Rundeck
 
-Spacewalk
-
 Nginx Load Balancer(s)
 
 Check-MK
@@ -35,7 +33,7 @@ Crypto
 
 7. Create check_mk monitoring
 
-8. Configure password and create Crypto entries
+8. Configure password and create crypto entries
 
 # Create Terraform Bitbucket Request
 
