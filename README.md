@@ -29,15 +29,13 @@ Crypto
 
 4. Deploy hosts with Rundeck
 
-5. Add to Spacewalk
+5. Configure load balancer
 
-6. Configure load balancer
+6. Create clock controller DB user
 
-7. Create clock controller DB user
+7. Create check_mk monitoring
 
-8. Create check_mk monitoring
-
-9. Configure password and create Crypto entries
+8. Configure password and create Crypto entries
 
 # Create Terraform Bitbucket Request
 
